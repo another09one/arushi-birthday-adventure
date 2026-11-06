@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b10">
+  <meta name="description" content="A cinematic birthday universe for Arushi — films, games, wishes and a virtual party.">
+  <meta property="og:title" content="The Main Character — Arushi">
+  <meta property="og:description" content="A birthday universe made with love.">
+  <title>THE MAIN CHARACTER — Arushi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-stars" aria-hidden="true"></div>
+    <p class="eyebrow intro-eyebrow">A STORY MADE JUST FOR YOU</p>
+    <h1 class="intro-title">For <em>Arushi.</em></h1>
+    <p class="intro-copy">Some people make ordinary days feel unforgettable.</p>
+    <button class="enter-button" id="enterButton">
+      <span>ENTER YOUR STORY</span><span aria-hidden="true">↗</span>
+    </button>
+    <p class="intro-foot">PLEASE TAKE YOUR TIME</p>
+  </div>
+
+  <audio id="soundtrack" loop preload="none">
+    <source src="assets/music/slow-piano.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="The Main Character home">T<span>MC</span><i>✦</i></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#film">THE FILM</a>
+      <a href="#moments">PHOTOGRAPHS</a>
+      <a href="#3d-adventure">3D WORLD</a>
+      <a href="#adventure">GAMES</a>
+      <a href="#party">PARTY</a>
+      <a href="#letter">A LETTER</a>
+    </nav>
+    <button class="sound-toggle" id="soundToggle" aria-label="Toggle soundtrack" aria-pressed="false">
+      <span class="sound-bars"><i></i><i></i><i></i><i></i></span>
+      <span id="soundLabel">SOUND OFF</span>
+    </button>
+  </header>
+
+  <main id="home">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE WORLD IS A LITTLE BRIGHTER WITH YOU IN IT</p>
+        <h1 class="hero-title">The main<br>character is <em>you.</em></h1>
+        <p class="hero-subtitle">A little universe of memories, laughter, and all the things that make you wonderfully, unmistakably <strong>Arushi.</strong></p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#story">BEGIN THE STORY <span>↓</span></a>
+          <span class="edition">A VERY PERSONAL EDITION <b>NO. 07</b></span>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-label="Decorative cinematic portrait frame">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-frame">
+          <div class="frame-glow"></div>
+          <img class="hero-photo" src="assets/images/02-portrait-maroon.jpg" alt="Arushi smiling in a maroon outfit">
+          <span class="frame-caption">THE ONE AND ONLY · ARUSHI</span>
+          <span class="frame-index">FIG. 01 — ARUSHI</span>
+        </div>
+        <span class="floating-note note-top">made with love</span>
+        <span class="floating-note note-bottom">chapter one · always</span>
+      </div>
+      <div class="scroll-cue"><span></span> SCROLL TO EXPLORE</div>
+    </section>
+
+    <section class="intro-quote section-shell reveal" id="story">
+      <p class="eyebrow">BEFORE THE NEXT CHAPTER</p>
+      <h2>Some friendships become<br><em>part of your favourite memories.</em></h2>
+      <p class="quote-support">And somehow, you become part of the reason those memories matter.</p>
+      <span class="quote-mark">“</span>
+    </section>
+
+
+
+    <section class="three-world-section section-shell" id="3d-adventure">
+      <div class="section-heading reveal"><div><p class="eyebrow">A 3D BIRTHDAY UNIVERSE · PLAYER ONE: ARUSHI</p><h2>Step inside your <em>own little world.</em></h2></div><p class="heading-note">Walk around, meet the guests,<br>find gifts and unlock surprises.</p></div>
+      <div class="three-game-shell">
+        <div class="three-hud">
+          <div><span class="hud-kicker">THE ARUSHIVERSE</span><strong id="threeLocation">STARLIGHT ISLAND</strong></div>
+          <div class="three-objective"><span>✦</span><span id="threeObjective">Find the glowing keepsakes</span></div>
+          <div class="three-count"><b id="threeCollected">0</b><small> / 6 STARS</small></div>
+        </div>
+        <div class="three-viewport" id="threeViewport">
+          <canvas id="birthday3D" aria-label="Interactive 3D birthday island. Move with WASD or arrow keys."></canvas>
+          <div class="three-loading" id="threeLoading"><span class="loading-orbit">✦</span><b>BUILDING YOUR UNIVERSE...</b><small>One little world, made just for Arushi</small></div>
+          <div class="three-crosshair" aria-hidden="true">＋</div>
+          <div class="three-style-picker"><span>AVATAR LOOK</span><button data-outfit="#a98bc5" class="active" aria-label="Lavender outfit">LILAC</button><button data-outfit="#d88da7" aria-label="Rose outfit">ROSE</button><button data-outfit="#83aaa0" aria-label="Mint outfit">MINT</button></div>
+          <div class="three-hint" id="threeHint">WASD / ARROWS to move · E to interact · Drag to look</div>
+          <div class="three-interaction" id="threeInteraction" hidden>
+            <button class="three-close" id="threeClose" aria-label="Close">×</button>
+            <span class="eyebrow" id="threePanelKicker">A LITTLE SURPRISE</span>
+            <h3 id="threePanelTitle">A place for you.</h3>
+            <p id="threePanelText">Every corner has something waiting.</p>
+            <button class="game-button" id="threePanelAction">OPEN SURPRISE ↗</button>
+          </div>
+          <div class="three-controls" aria-label="Touch movement controls">
+            <button data-3d="forward" aria-label="Move forward">↑</button>
+            <div><button data-3d="left" aria-label="Move left">←</button><button data-3d="back" aria-label="Move backward">↓</button><button data-3d="right" aria-label="Move right">→</button></div>
+          </div>
+          <div class="three-bottom-actions"><button id="threeJump">JUMP ✧</button><button id="threeInteract" disabled>INTERACT <kbd>E</kbd></button><button id="threeReset">RESET VIEW ↺</button></div>
+        </div>
+        <div class="three-instructions"><p><b>Your mission:</b> Explore the island, say hello to the birthday guests, collect six glowing stars and find the secret birthday gate.</p><p>Desktop: WASD / arrow keys + E. Mobile: use the on-screen controls. Drag the scene to look around.</p></div>
+        <div class="quest-board">
+          <div><span class="eyebrow">YOUR QUEST LOG</span><b id="questProgress">0 / 4 adventures completed</b></div>
+          <div class="quest-list">
+            <span id="questMemory">○ Visit Memory Cottage</span>
+            <span id="questArcade">○ Win the Balloon Pop challenge</span>
+            <span id="questGuests">○ Say hello to the birthday crew</span>
+            <span id="questStars">○ Collect all six wishing stars</span>
+          </div>
+        </div>
+        <div class="mini-game-modal" id="worldMiniGame" hidden>
+          <div class="mini-game-card">
+            <button class="three-close" id="miniGameClose" aria-label="Close">×</button>
+            <span class="eyebrow" id="miniGameKicker">PIXEL ARCADE</span>
+            <h3 id="miniGameTitle">Balloon Pop!</h3>
+            <p id="miniGameDescription">Pop 10 balloons before the timer runs out.</p>
+            <div class="mini-game-stats"><b id="miniGameScore">0 / 10</b><b id="miniGameTimer">20s</b></div>
+            <div class="balloon-field" id="balloonField"></div>
+            <button class="game-button" id="miniGameStart">START THE CHALLENGE</button>
+            <p class="mini-game-result" id="miniGameResult" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="world-section section-shell" id="world">
+      <div class="section-heading reveal"><div><p class="eyebrow">OPEN WORLD · PLAYER ONE: ARUSHI</p><h2>Welcome to your <em>little universe.</em></h2></div><p class="heading-note">Explore at your own pace.<br>Every corner has a surprise.</p></div>
+      <div class="game-hud"><span>✦ ARUSHI'S ADVENTURE</span><span id="worldProgress">0 / 4 discoveries</span><span>WASD / ARROWS TO MOVE</span></div>
+      <div class="adventure-world" id="adventureWorld" tabindex="0" aria-label="Adventure map. Use arrow keys or WASD to move Arushi. Visit glowing places and press E to explore.">
+        <div class="world-sky"><span class="world-cloud cloud-a">☁</span><span class="world-cloud cloud-b">☁</span><span class="world-moon">☾</span></div>
+        <div class="world-path path-one"></div><div class="world-path path-two"></div><div class="world-lake"></div>
+        <div class="world-landmark meadow" data-zone="meadow"><span>🌷</span><b>MEMORY MEADOW</b><small>Little eras & photographs</small></div>
+        <div class="world-landmark arcade" data-zone="arcade"><span>🕹️</span><b>PIXEL ARCADE</b><small>Silly games & giggles</small></div>
+        <div class="world-landmark wishwood" data-zone="wishwood"><span>🌳</span><b>WISHING WOODS</b><small>Collect kind little wishes</small></div>
+        <div class="world-landmark partyplaza" data-zone="plaza"><span>🎡</span><b>PARTY PLAZA</b><small>The big birthday finale</small></div>
+        <div class="world-player" id="worldPlayer" aria-label="Arushi's player character"><span>👧🏻</span><i>ARUSHI</i></div>
+        <div class="world-prompt" id="worldPrompt">Move around to discover the world ✨</div>
+        <div class="world-controls"><button data-move="up" aria-label="Move up">↑</button><div><button data-move="left" aria-label="Move left">←</button><button data-move="down" aria-label="Move down">↓</button><button data-move="right" aria-label="Move right">→</button></div></div>
+      </div>
+      <div class="world-actions"><p>Walk close to a glowing location, then press <kbd>E</kbd> or tap <b>EXPLORE</b>. On mobile, use the arrow pad.</p><button class="game-button" id="worldExplore" disabled>EXPLORE LOCATION</button></div>
+      <div class="world-discovery" id="worldDiscovery" aria-live="polite"><span class="eyebrow">YOUR ADVENTURE BEGINS HERE</span><h3>Four places. A thousand little reasons to smile.</h3><p>Find every location to unlock the birthday finale. There is no timer. This world is yours.</p></div>
+    </section>
+
+    <section class="film-section section-shell" id="film">
+      <div class="section-heading reveal"><div><p class="eyebrow">NOW SHOWING · A SHORT FILM</p><h2>Her story, <em>in frames.</em></h2></div><p class="heading-note">A little movie made from<br>the moments you shared.</p></div>
+      <div class="film-player reveal"><div class="film-screen"><img id="filmImage" src="assets/images/01-childhood.jpg" alt="Arushi in a childhood photograph"><div class="film-vignette"></div><div class="film-caption"><span id="filmKicker">SCENE 01 · THE BEGINNING</span><h3 id="filmTitle">Once upon a time...</h3><p id="filmText">A whole lifetime of little moments waiting to happen.</p></div><div class="film-counter" id="filmCounter">01 / 06</div></div>
+      <div class="film-controls"><button class="round-button" id="filmPrev" aria-label="Previous scene">←</button><div class="film-progress"><span id="filmProgress"></span></div><button class="round-button" id="filmNext" aria-label="Next scene">→</button><button class="film-play" id="filmPlay">PLAY FILM ▶</button></div></div>
+      <p class="film-note">No photos together? That's okay. This film celebrates <em>her</em> — her little eras, her smiles, and the story still ahead.</p>
+    </section>
+
+    <section class="chapter-section section-shell" id="moments">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">A COLLECTION OF LITTLE FOREVERS</p><h2>The moments <em>that stay.</em></h2></div>
+        <p class="heading-note">A few frames from a story<br>still being written.</p>
+      </div>
+      <div class="memory-grid photo-gallery">
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/01-childhood.jpg" aria-label="Open the early chapter photograph"><img src="assets/images/01-childhood.jpg" alt="Arushi — the early chapter"><span class="photo-index">01</span></button><div class="memory-meta"><span>THE EARLY CHAPTER</span><span>01 / 15</span></div><h3>The Early Chapter.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/02-portrait-maroon.jpg" aria-label="Open the portrait photograph"><img src="assets/images/02-portrait-maroon.jpg" alt="Arushi — the portrait"><span class="photo-index">02</span></button><div class="memory-meta"><span>THE PORTRAIT</span><span>02 / 15</span></div><h3>The Portrait.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/03-cafe-moment.jpg" aria-label="Open a little cafe moment photograph"><img src="assets/images/03-cafe-moment.jpg" alt="Arushi — a little cafe moment"><span class="photo-index">03</span></button><div class="memory-meta"><span>A LITTLE CAFE MOMENT</span><span>03 / 15</span></div><h3>A Little Cafe Moment.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/04-lights-and-dreams.jpg" aria-label="Open under the lights photograph"><img src="assets/images/04-lights-and-dreams.jpg" alt="Arushi — under the lights"><span class="photo-index">04</span></button><div class="memory-meta"><span>UNDER THE LIGHTS</span><span>04 / 15</span></div><h3>Under The Lights.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/05-kitten-kindness.jpg" aria-label="Open kindness in the details photograph"><img src="assets/images/05-kitten-kindness.jpg" alt="Arushi — kindness in the details"><span class="photo-index">05</span></button><div class="memory-meta"><span>KINDNESS IN THE DETAILS</span><span>05 / 15</span></div><h3>Kindness In The Details.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/06-smile.jpg" aria-label="Open that smile photograph"><img src="assets/images/06-smile.jpg" alt="Arushi — that smile"><span class="photo-index">06</span></button><div class="memory-meta"><span>THAT SMILE</span><span>06 / 15</span></div><h3>That Smile.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/07-soft-smile.jpg" aria-label="Open the softer moments photograph"><img src="assets/images/07-soft-smile.jpg" alt="Arushi — the softer moments"><span class="photo-index">07</span></button><div class="memory-meta"><span>THE SOFTER MOMENTS</span><span>07 / 15</span></div><h3>The Softer Moments.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/08-playful-selfie.jpg" aria-label="Open the playful era photograph"><img src="assets/images/08-playful-selfie.jpg" alt="Arushi — the playful era"><span class="photo-index">08</span></button><div class="memory-meta"><span>THE PLAYFUL ERA</span><span>08 / 15</span></div><h3>The Playful Era.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/09-portrait.jpg" aria-label="Open just you photograph"><img src="assets/images/09-portrait.jpg" alt="Arushi — just you"><span class="photo-index">09</span></button><div class="memory-meta"><span>JUST YOU</span><span>09 / 15</span></div><h3>Just You.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/10-thoughtful.jpg" aria-label="Open in your own world photograph"><img src="assets/images/10-thoughtful.jpg" alt="Arushi — in your own world"><span class="photo-index">10</span></button><div class="memory-meta"><span>IN YOUR OWN WORLD</span><span>10 / 15</span></div><h3>In Your Own World.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/11-outdoors.jpg" aria-label="Open out in the world photograph"><img src="assets/images/11-outdoors.jpg" alt="Arushi — out in the world"><span class="photo-index">11</span></button><div class="memory-meta"><span>OUT IN THE WORLD</span><span>11 / 15</span></div><h3>Out In The World.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/12-adventure.jpg" aria-label="Open the adventure chapter photograph"><img src="assets/images/12-adventure.jpg" alt="Arushi — the adventure chapter"><span class="photo-index">12</span></button><div class="memory-meta"><span>THE ADVENTURE CHAPTER</span><span>12 / 15</span></div><h3>The Adventure Chapter.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/13-green-moment.jpg" aria-label="Open the moment photograph"><img src="assets/images/13-green-moment.jpg" alt="Arushi — the moment"><span class="photo-index">13</span></button><div class="memory-meta"><span>THE MOMENT</span><span>13 / 15</span></div><h3>The Moment.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/14-kitten-cuddle.jpg" aria-label="Open the little ones photograph"><img src="assets/images/14-kitten-cuddle.jpg" alt="Arushi — the little ones"><span class="photo-index">14</span></button><div class="memory-meta"><span>THE LITTLE ONES</span><span>14 / 15</span></div><h3>The Little Ones.</h3></article>
+<article class="memory-card photo-card reveal"><button class="photo-open" data-full="assets/images/15-purple-portrait.jpg" aria-label="Open another lovely frame photograph"><img src="assets/images/15-purple-portrait.jpg" alt="Arushi — another lovely frame"><span class="photo-index">15</span></button><div class="memory-meta"><span>ANOTHER LOVELY FRAME</span><span>15 / 15</span></div><h3>Another Lovely Frame.</h3></article>
+</div>
+    </section>
+
+
+    <section class="adventure-section section-shell" id="adventure">
+      <div class="section-heading reveal"><div><p class="eyebrow">A LITTLE BIRTHDAY QUEST</p><h2>Collect the stars. <em>Unlock the wishes.</em></h2></div><p class="heading-note">A tiny adventure made<br>especially for the birthday girl.</p></div>
+      <div class="quest-card reveal"><div class="quest-top"><span>ARUSHI'S BIRTHDAY QUEST</span><span id="starCount">0 / 5 STARS</span></div><h3 id="questTitle">The night sky is waiting.</h3><p id="questDescription">Find all five stars. Each one holds a little wish for your next chapter.</p><div class="star-map"><button class="quest-star" data-star="0">✦</button><button class="quest-star" data-star="1">✦</button><button class="quest-star" data-star="2">✦</button><button class="quest-star" data-star="3">✦</button><button class="quest-star" data-star="4">✦</button></div><div class="wish-unlock" id="wishUnlock"><span class="eyebrow">YOUR FIRST WISH IS WAITING</span><p>Tap a glowing star to reveal it.</p></div><button class="quest-reset" id="questReset">START THE QUEST AGAIN ↻</button></div>
+      <div class="party-card reveal"><div><p class="eyebrow">THE VIRTUAL BIRTHDAY PARTY</p><h3>Make a wish.<br><em>Blow out the candles.</em></h3><p>Five candles, one birthday girl, and a sky full of good things ahead.</p></div><div class="cake-wrap"><div class="candles"><button class="candle lit">♨</button><button class="candle lit">♨</button><button class="candle lit">♨</button><button class="candle lit">♨</button><button class="candle lit">♨</button></div><div class="cake"><div class="icing"></div><div class="cake-base"></div></div><p id="cakeMessage">Tap each flame to make a wish.</p></div></div>
+    </section>
+
+
+    <section class="virtual-party section-shell" id="party">
+      <div class="section-heading reveal"><div><p class="eyebrow">LIVE FROM THE BIRTHDAY UNIVERSE</p><h2>Welcome to the <em>party.</em></h2></div><p class="heading-note">The lights are on, the music is playing,<br>and your people are here to celebrate.</p></div>
+      <div class="party-stage reveal">
+        <div class="stage-lights"></div><div class="stage-sign">★ ARUSHI'S BIRTHDAY NIGHT ★</div>
+        <div class="guest-crowd" aria-label="A crowd of animated birthday guests">
+          <div class="guest g1"><span>🧑🏻‍🎤</span><b>Bestie</b><small>WOOHOO!</small></div><div class="guest g2"><span>👩🏽‍🎤</span><b>Party pal</b><small>HAPPY B-DAY!</small></div><div class="guest g3"><span>🧑🏾‍🎤</span><b>Hype squad</b><small>LET'S GO!</small></div><div class="guest g4"><span>👩🏻‍🎤</span><b>Birthday crew</b><small>♡♡♡</small></div><div class="guest g5"><span>🕺</span><b>Dance captain</b><small>ONE MORE SONG!</small></div>
+        </div>
+        <div class="stage-floor"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div>
+        <p class="stage-caption">A whole room full of imaginary party people — all here for one very real reason: YOU.</p>
+        <button class="primary-button" id="partyMode">START THE PARTY ✨</button>
+      </div>
+      <div class="game-grid">
+        <article class="mini-game reveal"><p class="eyebrow">GAME 01 · BALLOON RUSH</p><h3>Pop the birthday balloons!</h3><p>Pop 10 balloons before the timer runs out.</p><div class="game-stats"><span id="balloonScore">0 / 10</span><span id="balloonTimer">20s</span></div><div class="balloon-field" id="balloonField"><span class="balloon-hint">Press start, then tap the balloons!</span></div><button class="game-button" id="balloonStart">START BALLOON RUSH</button><p class="game-feedback" id="balloonFeedback" aria-live="polite"></p></article>
+        <article class="mini-game reveal"><p class="eyebrow">GAME 02 · MEMORY MATCH</p><h3>Find the matching pairs.</h3><p>Flip the cards and match all six birthday symbols.</p><div class="match-stats" id="matchStats">0 / 6 pairs</div><div class="match-board" id="matchBoard"></div><button class="game-button" id="matchReset">SHUFFLE & PLAY AGAIN ↻</button><p class="game-feedback" id="matchFeedback" aria-live="polite">Take your time. It's a celebration, not an exam.</p></article>
+        <article class="mini-game reveal"><p class="eyebrow">GAME 03 · WISH MACHINE</p><h3>Spin for a little surprise.</h3><p>Every spin brings a tiny birthday fortune.</p><div class="fortune-orb" id="fortuneOrb">✦</div><p class="fortune-text" id="fortuneText">Your next little surprise is waiting.</p><button class="game-button" id="fortuneSpin">SPIN THE WISH MACHINE</button></article>
+      </div>
+      <div class="wish-wall reveal"><div><p class="eyebrow">THE BIRTHDAY GUESTBOOK</p><h3>Leave a little love.</h3><p>Visitors can write a wish for Arushi. This starter version saves wishes in the visitor's browser; connect Firebase to make one shared wall for everyone.</p></div><form id="wishForm"><input id="wishName" maxlength="30" placeholder="Your name" required><textarea id="wishMessage" maxlength="180" placeholder="Write a birthday wish..." required></textarea><button class="game-button" type="submit">PIN MY WISH ♡</button></form><div class="wish-notes" id="wishNotes" aria-live="polite"></div></div>
+    </section>
+
+    <section class="music-room section-shell reveal" id="music">
+      <div><p class="eyebrow">THE BIRTHDAY SOUNDTRACK</p><h2>Press play.<br><em>Stay a little.</em></h2><p>Choose a soft moment, a birthday sing-along, or a little dance-floor energy.</p></div>
+      <div class="music-player"><div class="music-disc">♫</div><label for="musicSelect">NOW PLAYING</label><select id="musicSelect"><option value="assets/music/slow-piano.mp3">Slow piano · a soft moment</option><option value="assets/music/happy-birthday.mp3">Happy Birthday · sing along</option><option value="assets/music/party-upbeat.mp3">Party time · dance break</option></select><audio id="partyAudio" controls preload="none"><source src="assets/music/slow-piano.mp3" type="audio/mpeg"></audio><p>Add your licensed MP3 files to <code>assets/music/</code> using the names shown here. Music starts only when a visitor presses play.</p></div>
+    </section>
+
+    <section class="birthday-banner section-shell reveal">
+      <div class="banner-orb"></div>
+      <p class="eyebrow">THE DAY THE WORLD GOT LUCKIER</p>
+      <p class="banner-date">07 <span>·</span> NOVEMBER <span>·</span> 2026</p>
+      <h2>Happy Birthday,<br><em>Arushi.</em></h2>
+      <p class="banner-copy">Here's to another year of becoming, discovering, laughing, and collecting moments worth keeping.</p>
+      <a href="#letter" class="text-link">THERE'S SOMETHING I WANT TO SAY <span>↗</span></a>
+    </section>
+
+    <section class="letter-section section-shell reveal" id="letter">
+      <div class="letter-topline"><span>A NOTE FROM YOUR BEST FRIEND</span><span>OPEN WHEN YOU'RE READY</span></div>
+      <div class="letter-content">
+        <p class="eyebrow">A LITTLE REMINDER</p>
+        <h2>In case you<br>ever <em>forget...</em></h2>
+        <p class="letter-body">You are appreciated more than you probably realise. Thank you for the laughs, the conversations, the random moments, and for being exactly who you are. I hope this new chapter brings you the kind of happiness that stays long after the candles are blown out.</p>
+        <p class="signature">With lots of love, <span>Your best friend.</span></p>
+      </div>
+      <div class="letter-seal">A<br>✦</div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox"><button class="lightbox-close" id="lightboxClose">×</button><img id="lightboxImage" src="" alt="Enlarged photograph of Arushi"><p>ARUSHI · A MOMENT TO KEEP</p></div>
+  <footer class="site-footer">
+    <p>THE MAIN CHARACTER <span>✦</span> ARUSHI, 2026</p>
+    <p>THE BEST CHAPTERS ARE STILL AHEAD.</p>
+    <a href="#home" aria-label="Back to top">BACK TO THE BEGINNING ↑</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/world3d.js"></script>
+</body>
+</html>
